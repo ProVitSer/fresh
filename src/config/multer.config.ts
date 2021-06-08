@@ -17,7 +17,7 @@ export const multerOptions = {
     if (!file.originalname.match(/\.(jpg|png|xlsx)$/)) {
       return callback(
         new HttpException(
-          "Некорректный формат файла. Разрешены только jpg, png, xlsx",
+          "Incorrect file format. Allow only jpg, png, xlsx",
           HttpStatus.BAD_REQUEST
         ),
         false
