@@ -22,9 +22,12 @@ async function bootstrap() {
   SwaggerModule.setup("api", app, document);
 
   app.enableCors({
-    origin: "http://localhost:3000",
+    //origin: `http://localhost:${ApiConfig.production.apiPort}`,
+    origin: '*',
     methods: "GET,POST,DELETE,OPTIONS",
     allowedHeaders: "Content-Type, Accept,",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
   });
   await app.listen(port);
 }
