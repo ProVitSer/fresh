@@ -1,0 +1,16 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+export const ApiConfig = {
+    production: {
+        mongoUsername: process.env.MONGODB_USER,
+        mongoPass: process.env.MONGODB_PASS,
+        mongoIp: process.env.MONGODB_IP,
+        mongoPort: process.env.MONGODB_PORT,
+        mongoCollection: process.env.MONGODB_COLLECTION,
+        location: process.env.UPLOAD_LOCATION,
+        maxFileSize: +process.env.MAX_FILE_SIZE,
+        clusterNum: process.env.CLUSTER_NUM,
+        apiPort: +process.env.PORT,
+    },
+};
